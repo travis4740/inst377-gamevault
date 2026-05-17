@@ -1,0 +1,70 @@
+<html>
+
+<head>
+    <title>GameVault</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script defer src="index.js"></script>
+</head>
+
+<body>
+    <nav>
+        <div class="nav-brand">GameVault</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="favorites.html">Favorites</a></li>
+        </ul>
+    </nav>
+
+    <div class="search-box container">
+        <input type="text" id="search-input" placeholder="Search for a game...">
+        <button class="btn" onclick="searchGames()">Search</button>
+        <button class="btn" id="clear-btn" onclick="clearSearch()" style="display:none; background-color:#0f3460;">Clear</button>
+    </div>
+
+    <div class="container">
+        <h2>Trending Games</h2>
+    </div>
+    <div class="swiper trending-swiper">
+        <div class="swiper-wrapper" id="trending-wrapper"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+
+    <div class="container">
+        <h2>Browse by Genre</h2>
+        <div class="genre-filters" id="genre-filters">
+            <button class="genre-btn active" onclick="filterGenre('', this)">All</button>
+            <button class="genre-btn" onclick="filterGenre('action', this)">Action</button>
+            <button class="genre-btn" onclick="filterGenre('rpg', this)">RPG</button>
+            <button class="genre-btn" onclick="filterGenre('strategy', this)">Strategy</button>
+            <button class="genre-btn" onclick="filterGenre('shooter', this)">Shooter</button>
+            <button class="genre-btn" onclick="filterGenre('adventure', this)">Adventure</button>
+            <button class="genre-btn" onclick="filterGenre('puzzle', this)">Puzzle</button>
+            <button class="genre-btn" onclick="filterGenre('sports', this)">Sports</button>
+            <button class="genre-btn" onclick="filterGenre('racing', this)">Racing</button>
+        </div>
+
+    <div class="container">
+        <div id="search-results-section" style="display: none;">
+            <h2>Search Results</h2>
+            <div id="search-results-grid" class="games-grid"></div>
+        </div>
+
+        <div id="new-releases-section">
+            <h2 style="margin-top: 40px;">New Releases</h2>
+            <div id="games-grid" class="games-grid">Loading...</div>
+        </div>
+
+        <div id="coming-soon-section">
+            <h2 style="margin-top: 40px;">Coming Soon</h2>
+            <div id="coming-soon-grid" class="games-grid">Loading...</div>
+        </div>
+    </div>
+</body>
+
+</html>
